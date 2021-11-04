@@ -1,0 +1,25 @@
+{
+  "name": "deployservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "tsc",
+    "start": "cd ./dist && node createDockerfile.js",
+    "poststart": "tar cvf deployFiles/project.tar workspace"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nillworld/deployService.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nillworld/deployService/issues"
+  },
+  "homepage": "https://github.com/nillworld/deployService#readme",
+  "dependencies": {
+    "@types/node": "^16.11.6"
+  }
+}
