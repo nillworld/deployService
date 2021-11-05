@@ -1,7 +1,7 @@
 {
 	"imgName": "testDockerImg",
 	"programVersion": "python: 3.9",
-	"Author": "tobesoft@tobesoft.com",
+	"author": "tobesoft@tobesoft.com",
 	"workDir": "/app",
 	"setScript": "npm start"
 }
