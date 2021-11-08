@@ -1,22 +1,18 @@
 import * as fs from 'fs';
-let imgName: string = "testDockerImg"
-let programVersion: string = "node:6.2.2"
-let author: string = "tobesoft@tobesoft.com"
-let workDir: string = "/app"
-let setScripts: string = "npm start"
 
-
+let data=fs.readFileSync('option.json', 'utf8');
+let options = JSON.parse(data);
 
 fs.writeFile('../workspace/Dockerfile',`
-FROM ${programVersion}
-LABEL name="${author}"
+FROM ${options.programVersion}
+LABEL name="${options.author}"
 RUN mkdir -p /app
-WORKDIR ${workDir}
+WORKDIR ${options.workDir}
 ADD . /app
 RUN npm install
 ENV NODE_ENV development
 EXPOSE 3000 80
-CMD ${setScripts}
+CMD ${options.setScripts}
 `, function (err) {
 	if (err === null) {
 		console.log('success');

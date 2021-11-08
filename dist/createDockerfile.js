@@ -20,12 +20,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs = __importStar(require("fs"));
-var imgName = "testDockerImg";
-var programVersion = "node:6.2.2";
-var author = "tobesoft@tobesoft.com";
-var workDir = "/app";
-var setScripts = "npm start";
-fs.writeFile('../workspace/Dockerfile', "\nFROM " + programVersion + "\nLABEL name=\"" + author + "\"\nRUN mkdir -p /app\nWORKDIR " + workDir + "\nADD . /app\nRUN npm install\nENV NODE_ENV development\nEXPOSE 3000 80\nCMD " + setScripts + "\n", function (err) {
+var data = fs.readFileSync('option.json', 'utf8');
+var options = JSON.parse(data);
+fs.writeFile('../workspace/Dockerfile', "\nFROM " + options.programVersion + "\nLABEL name=\"" + options.author + "\"\nRUN mkdir -p /app\nWORKDIR " + options.workDir + "\nADD . /app\nRUN npm install\nENV NODE_ENV development\nEXPOSE 3000 80\nCMD " + options.setScripts + "\n", function (err) {
     if (err === null) {
         console.log('success');
     }
