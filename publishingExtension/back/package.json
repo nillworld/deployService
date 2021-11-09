@@ -1,0 +1,41 @@
+{
+	"name": "set-debugger-extension",
+	"description": "setDebuggerExtensionTest",
+	"version": "0.0.1",
+	"publisher": "tobesoft",
+	"engines": {
+		"vscode": "^1.22.0"
+	},
+	"activationEvents": [
+		"onCommand:setDebuggerExtension.start"
+	],
+	"main": "./src/server/extensions",
+	"contributes": {
+		"commands": [
+		{
+			"command": "setDebuggerExtension.start",
+			"title": "start",
+			"category": "setDebuggerExtension"
+		}
+		]
+	},
+	"dependencies": {
+		"@sap-devx/webview-rpc": "^0.3.1",
+		"@types/vscode": "^1.61.0",
+		"@types/ws": "^8.2.0",
+		"@vscode-logging/types": "^0.1.4",
+		"typescript": "^4.4.4",
+		"ws": "^8.2.3"
+	},
+	"scripts": {
+		"start": "tsc-watch --onSuccess \"node ./src/server/socketServer.js\"",
+		"build": "vsce package"
+	},
+	"devDependencies": {
+		"tsc-watch": "^4.5.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/remote-develop/step2.git"
+	}
+}
