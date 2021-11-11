@@ -1,9 +1,10 @@
 import React from 'react';
+import './BaseForm.css'
 
 const BaseForm = () => {
 	return (
-		<div>
-			form
+		<div className="BaseForm">
+			form test
 		</div>
 		
 	)

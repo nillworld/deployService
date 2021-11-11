@@ -8,7 +8,7 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				<p>
-				Edit <code>src/App.tsx</code> and save to reload.
+				Editing <code>BaseForm</code>
 				</p>
 				<BaseForm/>
 			</header>
