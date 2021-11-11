@@ -2,17 +2,16 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import BaseForm from './Components/BaseForm'
+import { BrowserRouter as Router } from 'react-router-dom';
+import Nav from './Components/Nav';
+import Transition from './Components/Transition';
 
 function App() {
 	return (
-		<div className="App">
-			<header className="App-header">
-				<p>
-				Editing <code>BaseForm</code>
-				</p>
-				<BaseForm/>
-			</header>
-		</div>
+		<Router>
+			<Nav />
+			<Transition />
+		</Router>
 	);
 }
 

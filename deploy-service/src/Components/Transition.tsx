@@ -1,6 +1,6 @@
 import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { Route, Switch, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Page from "./Page";
 import "./Transition.css";
 
@@ -16,27 +16,27 @@ const wendy =
   "https://raw.githubusercontent.com/baeharam/Redvelvet-Fansite/master/images/about-wendy.jpg";
 
 const Transition = () => {
-  const PageIrene = <Page image={irene} />;
-  const PageSeulgi = <Page image={seulgi} />;
-  const PageYeri = <Page image={yeri} />;
-  const PageJoy = <Page image={joy} />;
-  const PageWendy = <Page image={wendy} />;
+	const PageIrene = <Page image={irene} />;
+	const PageSeulgi = <Page image={seulgi} />;
+	const PageYeri = <Page image={yeri} />;
+	const PageJoy = <Page image={joy} />;
+	const PageWendy = <Page image={wendy} />;
 
-  const location = useLocation();
+	const location = useLocation();
 
-  return (
-    <TransitionGroup className="transition-group">
-      <CSSTransition key={location.pathname} classNames="fade" timeout={500}>
-        <Switch location={location}>
-          <Route exact path="/" children={PageIrene} />
-          <Route path="/seulgi" children={PageSeulgi} />
-          <Route path="/yeri" children={PageYeri} />
-          <Route path="/joy" children={PageJoy} />
-          <Route path="/wendy" children={PageWendy} />
-        </Switch>
-      </CSSTransition>
-    </TransitionGroup>
-  );
+	return (
+		<TransitionGroup className="transition-group">
+		<CSSTransition key={location.pathname} classNames="fade" timeout={500}>
+			<Routes location={location}>
+			<Route path="/" element={PageIrene} />
+			<Route path="/seulgi" element={PageSeulgi} />
+			<Route path="/yeri" element={PageYeri} />
+			<Route path="/joy" element={PageJoy} />
+			<Route path="/wendy" element={PageWendy} />
+			</Routes>
+		</CSSTransition>
+		</TransitionGroup>
+	);
 };
 
 export default Transition;
