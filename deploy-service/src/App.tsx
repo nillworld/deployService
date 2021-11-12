@@ -8,10 +8,11 @@ import Transition from './Components/Transition';
 
 function App() {
 	return (
-		<Router>
-			<Nav />
-			<Transition />
-		</Router>
+		// <Router>
+		// 	<Nav />
+		// 	<Transition />
+		// </Router>
+		<BaseForm/>
 	);
 }
 
