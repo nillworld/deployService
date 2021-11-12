@@ -8,9 +8,11 @@ const InputBox = (props: { test: string, value: any, inputList: Array<string>}) 
 		<div className="InputBox">
 			ee
 			{props.inputList.map((inputBox, index) => {
-				console.log(inputBox);
 				return (
 					<div>
+						<h2>
+							{inputBox}
+						</h2>
 						<input placeholder={inputBox} onChange={props.value} />
 					</div>
 				)
